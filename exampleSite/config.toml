@@ -1,0 +1,10 @@
+title = "Wiki Theme"
+baseURL = "https://ribanez.com.ar"
+languageCode = "en-us"
+theme = "wiki-hugo-theme"
+
+SectionPagesMenu = "main"
+
+[params]
+  description = "A wiki template"
+  github = "https://github.com/rsibanez89/wiki-hugo-theme"

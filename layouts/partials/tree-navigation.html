@@ -1,0 +1,20 @@
+<!-- For each top level folder-->
+<div class="tree-navigation">
+	<ul>{{ template "tree-navigation" (dict "section" .) }}</ul>
+</div>
+
+{{ define "tree-navigation" }}
+	{{ range .section.Sections }}
+		<li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+		{{ template "current-section-pages" (dict "section" .) }}
+		<ul>{{ template "tree-navigation" (dict "section" .) }}</ul>
+	{{ end }}
+{{end}}
+
+{{ define "current-section-pages" }}
+	<ul>
+			{{ range .section.RegularPages }}
+				<li><a href="{{ .Permalink}}"> {{ .LinkTitle }} </a></li>
+			{{ end }}
+	</ul>
+{{ end }}
