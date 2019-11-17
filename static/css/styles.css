@@ -1,5 +1,5 @@
 body {
-  background-color: #f9f9f9;
+  background-color: white;
   margin: 0;
   padding: 0;
   font-family: 'Roboto', sans-serif;
@@ -23,39 +23,53 @@ nav.navigation {
       background-color: #666;
       color: white; }
 
-@media screen and (max-width: 400px) {
-  nav.navigation a {
-    float: none;
-    width: 100%; } }
-
 .page-container {
   display: flex; }
   .page-container .tree-navigation {
-    background-color: #666;
-    height: 100%; }
+    background-color: #f6f8fa;
+    flex: 0 1 auto;
+    width: 300px; }
+    .page-container .tree-navigation ul, .page-container .tree-navigation li {
+      list-style-type: none;
+      padding-top: 5px; }
+    .page-container .tree-navigation ul {
+      padding-left: 20px; }
+    .page-container .tree-navigation .caret {
+      cursor: pointer;
+      user-select: none; }
+    .page-container .tree-navigation .caret::before {
+      content: "\1F83A";
+      color: black;
+      display: inline-block;
+      margin-right: 5px; }
+    .page-container .tree-navigation .caret-down::before {
+      content: "\1F83A";
+      transform: rotate(90deg); }
+    .page-container .tree-navigation .nested {
+      display: none; }
+    .page-container .tree-navigation .active {
+      display: block; }
+  .page-container .navigation-bar {
+    padding: 0;
+    cursor: ew-resize;
+    flex: 0 0 auto; }
+    .page-container .navigation-bar::before {
+      content: '';
+      display: block;
+      width: 4px;
+      height: 100%;
+      margin: 0 auto; }
+    .page-container .navigation-bar:hover {
+      background-color: #ddd; }
+  .page-container .content {
+    flex: 1 1 auto;
+    padding: 20px; }
 
-ul, #myUL {
-  list-style-type: none; }
-
-#myUL {
-  margin: 0;
-  padding: 0; }
-
-.caret {
-  cursor: pointer;
-  user-select: none; }
-
-.caret::before {
-  background-image: url("images/chevron-right-solid.svg");
-  color: black;
-  display: inline-block;
-  margin-right: 6px; }
-
-.caret-down::before {
-  transform: rotate(90deg); }
-
-.nested {
-  display: none; }
-
-.active {
-  display: block; }
+@media screen and (max-width: 600px) {
+  nav.navigation a {
+    float: none;
+    width: 100%; }
+  .page-container {
+    display: block; }
+    .page-container .tree-navigation {
+      width: 100%; } }
