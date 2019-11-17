@@ -1,9 +1,9 @@
 body {
-  background-color: white;
   margin: 0;
   padding: 0;
-  font-family: 'Roboto', sans-serif;
-  min-height: 100vh; }
+  min-height: 100vh;
+  background-color: white;
+  font-family: 'Roboto', sans-serif; }
 
 nav.navigation {
   background-color: #0a1922;
@@ -28,10 +28,14 @@ nav.navigation {
   .page-container .tree-navigation {
     background-color: #f6f8fa;
     flex: 0 1 auto;
-    width: 300px; }
+    width: 300px;
+    min-height: calc(100vh - 51.2px); }
     .page-container .tree-navigation ul, .page-container .tree-navigation li {
       list-style-type: none;
       padding-top: 5px; }
+      .page-container .tree-navigation ul a, .page-container .tree-navigation li a {
+        text-decoration: none;
+        color: black; }
     .page-container .tree-navigation ul {
       padding-left: 20px; }
     .page-container .tree-navigation .caret {
@@ -48,7 +52,8 @@ nav.navigation {
     .page-container .tree-navigation .nested {
       display: none; }
     .page-container .tree-navigation .active {
-      display: block; }
+      display: block;
+      font-weight: 600; }
   .page-container .navigation-bar {
     padding: 0;
     cursor: ew-resize;

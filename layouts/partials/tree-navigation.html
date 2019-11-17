@@ -1,5 +1,5 @@
 <!-- For each top level folder-->
-<ul>
+<!-- <ul>
 	<li><span class="caret"></span><a href="{{ .Permalink }}">{{ .Title }}</a>
 		{{ template "tree-navigation" (dict "section" . "ulStyle" "active") }}
 		{{ template "current-section-pages" (dict "section" .) }}
@@ -27,4 +27,26 @@
 				{{ end }}
 		</ul>
 	{{ end }}
+{{ end }} -->
+
+
+<ul>
+    {{ $CurrentTopSection := (.Site.GetPage "section" .Section).CurrentSection }}
+    <li><a href="{{ $CurrentTopSection.Permalink }}">{{ $CurrentTopSection.Title }}</a>
+    {{ template "render-section" $CurrentTopSection }}
+</ul>
+
+{{ define "render-section" }}
+    {{ range .Pages }}
+        <li>
+						{{ if .IsSection }}	
+							<span class="caret"></span>
+						{{ end }}
+						<a href="{{ .Permalink }}">{{ .Title }}</a>
+
+            {{ if .IsSection }}
+                <ul>{{ template "render-section" . }}</ul>
+            {{ end }}
+        </li>
+    {{ end }}
 {{ end }}

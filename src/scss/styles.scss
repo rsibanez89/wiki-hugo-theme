@@ -1,9 +1,9 @@
 body {
-  background-color: white;
   margin: 0;
   padding: 0;
-  font-family: 'Roboto', sans-serif;
   min-height: 100vh;
+  background-color: white;
+  font-family: 'Roboto', sans-serif;
 }
 
 // HEADER
@@ -38,12 +38,17 @@ nav.navigation {
   .tree-navigation {
     background-color: #f6f8fa;
     flex: 0 1 auto;
-
     width: 300px;
+    min-height: calc(100vh - 51.2px);
 
     ul, li {
       list-style-type: none;
       padding-top: 5px;
+
+      a {
+        text-decoration: none;
+        color: black;
+      }
     }
 
     ul {
@@ -74,6 +79,7 @@ nav.navigation {
     
     .active {
       display: block;
+      font-weight: 600;
     }
   }
 

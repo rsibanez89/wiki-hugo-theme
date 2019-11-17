@@ -1,7 +1,7 @@
 {{ define "main" }}
 <div class="page-container">
   <div class="tree-navigation">
-    {{ partial "tree-navigation.html" (.Site.GetPage "section" .Section).CurrentSection }}
+    {{ partial "tree-navigation.html" . }}
   </div>
   <div class="navigation-bar"></div>
   <div class="content">
