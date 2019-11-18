@@ -1,15 +1,22 @@
 {
-  "name": "ribanez-hugo-theme",
+  "name": "wiki-hugo-theme",
   "version": "1.0.0",
+  "author": "Rodrigo Ibanez",
   "scripts": {
     "start": "npm run build && cd exampleSite && hugo serve --themesDir ../..",
+    "start:rendered": "npm run build && cd exampleSite && hugo serve --themesDir ../.. --renderToDisk",
     "build": "npm run build:style && npm run build:js",
     "build:style": "node-sass src/scss/styles.scss static/css/styles.css",
-    "build:js": "uglifyjs src/js/scripts.js -o static/js/scripts.min.js"
+    "build:js": "uglifyjs src/js/scripts.js -o static/js/scripts.min.js",
+    "clean": "rm -rf public",
+    "deploy": "npm run clean && npm run generate"
   },
-  "author": "Rodrigo Ibanez",
   "devDependencies": {
     "node-sass": "^4.13.0",
     "uglify-js": "^3.6.7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rsibanez89/wiki-hugo-theme.git"
   }
 }
