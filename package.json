@@ -9,7 +9,8 @@
     "build:style": "node-sass src/scss/styles.scss static/css/styles.css",
     "build:js": "uglifyjs src/js/scripts.js -o static/js/scripts.min.js",
     "clean": "rm -rf public",
-    "deploy": "npm run clean && npm run generate"
+    "deploy": "npm run clean && npm run generate",
+    "build:netlify": "mv . wiki-hugo-theme && start:rendered"
   },
   "devDependencies": {
     "node-sass": "^4.13.0",
