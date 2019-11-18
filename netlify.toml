@@ -1,0 +1,6 @@
+[build]
+  base = "wiki-hugo-theme/"
+
+  publish = "wiki-hugo-theme/exampleSite/public/"
+
+  command = "npm run start:rendered"
